@@ -4,6 +4,25 @@ spring:
 
   #配置nacos注册中心地址
   cloud:
+    gateway:
+      discovery:
+        locator:
+          # 默认为false，设为true开启通过微服务创建路由的功能，即可以通过微服务名访问服务
+          # http://localhost:8081/mall-order/order/findOrder
+          enabled: false   #这里建议设置false，因为微服务属于系统内部，没必要暴露给前端，带来安全风险
+      # 是否开启网关
+      enabled: true
+      filter:
+        - PrefixPath=/mall-order
+        - RedirectTo=302, https://www.baidu.com/
+      routes:
+        - id: mall-order
+          uri: lb://mall-order
+          predicates:
+            - Path=/order/**
+            - CheckAuth=ylb
+            # 配置一个时间，在这个时间之后的请求才有效。在这个时间之前的请求404。一般用于抢购场景
+#             - After=
     nacos:
       discovery:
         server-addr: 127.0.0.1:8848
