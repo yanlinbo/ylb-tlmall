@@ -29,6 +29,10 @@ spring:
         # 对应在Nacos中创建的命名空间
 #        namespace: 7080361d-8b1b-4bfd-a6c4-38125b2906dc
 #        group: tuling-ylb
+    sentinel:
+      transport:
+        # 添加sentinel的控制台地址
+        dashboard: 127.0.0.1:8080
 
 management:
   endpoints:

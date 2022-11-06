@@ -7,15 +7,15 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="tulingmall-member" />
-        <module name="tulingmall-admin" />
-        <module name="tulingmall-gateway" />
         <module name="tulingmall-core" />
-        <module name="tulingmall-product" />
+        <module name="tulingmall-gateway" />
+        <module name="tulingmall-member" />
         <module name="tulingmall-order" />
         <module name="tulingmall-portal" />
         <module name="tulingmall-common" />
+        <module name="tulingmall-product" />
         <module name="tulingmall-authcenter" />
+        <module name="tulingmall-admin" />
       </profile>
     </annotationProcessing>
   </component>

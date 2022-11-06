@@ -40,6 +40,7 @@
         </dependencies>
     </dependencyManagement>
     <dependencies>
+        <!--网关中本身就包含web服务，不能再重复引入-->
         <!--<dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
@@ -69,6 +70,27 @@
             <artifactId>spring-boot-starter-actuator</artifactId>
         </dependency>
         <!-- 服务注册于发现 需要两个依赖-->
+        <!--引入流控组件 sentinel start-->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
+            <version>${spring-cloud-alibaba.version}</version>
+        </dependency>
+        <!--引入流控组件 sentinel end-->
+
+        <!--流控组件 sentinel适配gateway start-->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-alibaba-sentinel-gateway</artifactId>
+            <version>${spring-cloud-alibaba.version}</version>
+        </dependency>
+        <!--流控组件 sentinel适配gateway end-->
+        <!-- SkyWalking 工具类 -->
+        <dependency>
+            <groupId>org.apache.skywalking</groupId>
+            <artifactId>apm-toolkit-trace</artifactId>
+            <version>8.8.0</version>
+        </dependency>
 
     </dependencies>
 
