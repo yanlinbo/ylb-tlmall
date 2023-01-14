@@ -1,4 +1,3 @@
-
 spring:
   application:
     name: mall-order  #微服务名称

@@ -29,7 +29,7 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-<!--            &lt;!&ndash;Spring Cloud Alibaba 相关依赖&ndash;&gt;-->
+            <!--            &lt;!&ndash;Spring Cloud Alibaba 相关依赖&ndash;&gt;-->
             <dependency>
                 <groupId>com.alibaba.cloud</groupId>
                 <artifactId>spring-cloud-alibaba-dependencies</artifactId>
@@ -58,7 +58,7 @@
             <artifactId>spring-cloud-starter-gateway</artifactId>
             <!--<version>${spring-cloud.version}</version>-->
         </dependency>
-<!--        &lt;!&ndash;加入nacos的依赖&ndash;&gt;-->
+        <!--        &lt;!&ndash;加入nacos的依赖&ndash;&gt;-->
         <!-- 服务注册于发现 需要两个依赖-->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>

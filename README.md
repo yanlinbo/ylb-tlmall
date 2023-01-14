@@ -21,3 +21,10 @@ tulingmall-security 安全模块，被其他程序以 jar 包形式使用
 tulingmall-sk-cart 秒杀确认单模块
 tulingmall-sk-order 秒杀订单处理
 tulingmall-unqid 分布式 ID 生成程序
+
+
+本项目的开发思路：
+    第一阶段：逐步的使用市面上的所有技术，保证所有的技术在本项目中得到应用
+    第二阶段：逐步的把实际开发过的项目中优秀的业务方案在本项目中进行应用，例如7*24等
+    
+    

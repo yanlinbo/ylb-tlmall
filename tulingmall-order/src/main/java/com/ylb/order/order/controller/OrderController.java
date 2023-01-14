@@ -1,4 +1,4 @@
-package com.ylb.order.controller;
+package com.ylb.order.order.controller;
 
 import org.apache.skywalking.apm.toolkit.trace.Trace;
 import org.springframework.stereotype.Controller;
@@ -11,15 +11,15 @@ public class OrderController {
 
     @RequestMapping(value = "/findOrder")
     @ResponseBody
-    public String findOrder(){
+    public String findOrder() {
 
         String orderNum = getOrderNum();
-        System.out.println("查询到的订单: "+orderNum);
+        System.out.println("查询到的订单: " + orderNum);
         return orderNum;
     }
 
     @Trace
-    public String getOrderNum(){
+    public String getOrderNum() {
         return "order001";
     }
 }

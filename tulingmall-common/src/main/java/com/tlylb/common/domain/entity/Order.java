@@ -2,10 +2,10 @@ package com.tlylb.common.domain.entity;
 
 public class Order {
 
-    private  Long orderId;
+    private Long orderId;
 
-    private  String type;
+    private String type;
 
-    private  String price;
+    private String price;
 
 }

@@ -35,12 +35,14 @@ public class GatewayConfiguration {
     private final ServerCodecConfigurer serverCodecConfigurer;
 
     public GatewayConfiguration(ObjectProvider<List<ViewResolver>> viewResolversProvider, ServerCodecConfigurer serverCodecConfigurer) {
-        this.viewResolvers = viewResolversProvider.getIfAvailable(Collections::emptyList);;
+        this.viewResolvers = viewResolversProvider.getIfAvailable(Collections::emptyList);
+        ;
         this.serverCodecConfigurer = serverCodecConfigurer;
     }
 
     /**
      * 限流异常处理器
+     *
      * @return
      */
     @Bean
@@ -52,6 +54,7 @@ public class GatewayConfiguration {
 
     /**
      * 限流过滤器
+     *
      * @return
      */
     @Bean
@@ -105,7 +108,7 @@ public class GatewayConfiguration {
             @Override
             public Mono<ServerResponse> handleRequest(ServerWebExchange exchange, Throwable t) {
                 HashMap<String, String> result = new HashMap<>();
-                result.put("code",String.valueOf(HttpStatus.TOO_MANY_REQUESTS.value()));
+                result.put("code", String.valueOf(HttpStatus.TOO_MANY_REQUESTS.value()));
                 result.put("msg", HttpStatus.TOO_MANY_REQUESTS.getReasonPhrase());
 
                 return ServerResponse.status(HttpStatus.TOO_MANY_REQUESTS)

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ylb.product.mapper.ProductMapper">
+  <resultMap id="BaseResultMap" type="com.ylb.product.pojo.Product">
+    <id column="id" jdbcType="INTEGER" property="id" />
+    <result column="product_name" jdbcType="VARCHAR" property="productName" />
+    <result column="product_sn" jdbcType="VARCHAR" property="productSn" />
+    <result column="delete_status" jdbcType="INTEGER" property="deleteStatus" />
+    <result column="sale" jdbcType="INTEGER" property="sale" />
+    <result column="price" jdbcType="DECIMAL" property="price" />
+  </resultMap>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    delete from product_tbl
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="com.ylb.product.pojo.Product">
+    insert into product_tbl (id, product_name, product_sn,delete_status,
+      sale,price)
+    values (#{id,jdbcType=INTEGER}, #{productName,jdbcType=VARCHAR}, #{productSn,jdbcType=VARCHAR},
+      #{deleteStatus,jdbcType=INTEGER}, #{sale,jdbcType=INTEGER}, #{price,jdbcType=DECIMAL})
+  </insert>
+  <update id="updateByPrimaryKey" parameterType="com.ylb.product.pojo.Product">
+    update product_tbl
+    set product_name = #{productName,jdbcType=INTEGER},
+      product_sn = #{productSn,jdbcType=INTEGER},
+      delete_status = #{deleteStatus,jdbcType=INTEGER},
+      sale = #{sale,jdbcType=INTEGER},
+      price = #{price,jdbcType=INTEGER}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    select id, product_name, product_sn,delete_status,sale,price
+    from product_tbl
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select id, product_name, product_sn,delete_status,sale,price
+    from product_tbl
+  </select>
+</mapper>

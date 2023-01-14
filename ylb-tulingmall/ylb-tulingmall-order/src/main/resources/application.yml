@@ -1,0 +1,52 @@
+# 数据源
+spring:
+  datasource:
+    username: root
+    password: 123456
+    url: jdbc:mysql://localhost:3306/tl_mall_order?serverTimezone=UTC&useUnicode=true&characterEncoding=utf-8&useSSL=false&allowPublicKeyRetrieval=true
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.alibaba.druid.pool.DruidDataSource
+
+    #初始化时运行sql脚本
+#    schema: classpath:sql/schema.sql
+#    initialization-mode: never
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+        username: nacos
+        password: nacos
+#    alibaba:
+#      seata:
+#        tx-service-group: my_test_tx_group
+  application:
+    name: tl-order
+#设置mybatis
+mybatis:
+  mapper-locations: classpath:mapper/*Mapper.xml
+  #config-location: classpath:mybatis-config.xml
+  typeAliasesPackage: com.ylb.order
+  configuration:
+    mapUnderscoreToCamelCase: true
+server:
+  port: 8071
+#seata:
+#  registry:
+#    # 配置seata的注册中心， 告诉seata client 怎么去访问seata server(TC)
+#    type: nacos
+#    nacos:
+#      server-addr: 127.0.0.1:8848  # seata server 所在的nacos服务地址
+#      application: seata-server    # seata server 的服务名seata-server ，如果没有修改可以不配
+#      username: nacos
+#      password: nacos
+#      group: SEATA_GROUP          # seata server 所在的组，默认就是SEATA_GROUP，没有改也可以不配
+#  config:
+#    type: nacos
+#    nacos:
+#      server-addr: 127.0.0.1:8848
+#      username: nacos
+#      password: nacos
+#      group: SEATA_GROUP
+logging:
+  level:
+    com.ylb.stock.mapper: debug

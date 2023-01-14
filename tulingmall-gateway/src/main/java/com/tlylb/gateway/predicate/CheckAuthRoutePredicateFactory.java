@@ -27,19 +27,21 @@ public class CheckAuthRoutePredicateFactory extends AbstractRoutePredicateFactor
         return new GatewayPredicate() {
             @Override
             public boolean test(ServerWebExchange serverWebExchange) {
-                System.out.println("config.getName() "+config.getName());
-                if(config.getName().equals("ylb")){
+                System.out.println("config.getName() " + config.getName());
+                if (config.getName().equals("ylb")) {
                     return true;
                 }
                 return false;
             }
         };
     }
+
     @Override
     public List<String> shortcutFieldOrder() {
         return Collections.singletonList("name");
     }
-    public static class Config{
+
+    public static class Config {
         private String name;
 
         public Config() {

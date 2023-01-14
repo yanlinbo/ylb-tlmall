@@ -1,4 +1,4 @@
-package com.ylb.order;
+package com.ylb.order.order;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
